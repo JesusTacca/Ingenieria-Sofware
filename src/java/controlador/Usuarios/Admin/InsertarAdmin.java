@@ -27,6 +27,7 @@ public class InsertarAdmin extends HttpServlet {
            response.sendRedirect("adm/Administrador.jsp");
        }else{
            response.sendRedirect("mostraradmin");
+           //HOLA
        }
   }
 
