@@ -20,7 +20,7 @@ public class InsertarAdmin extends HttpServlet {
        String dni = request.getParameter("dni");  
        String nom = request.getParameter("nombre");  
        String apel = request.getParameter("apellido");  
-       
+       //bbb
        Admin u= new Admin(Integer.parseInt(cod),user, pass, em,Integer.parseInt(dni), nom, apel);
        ControlarAdmin mu= new ControlarAdmin();
        if(mu.crearAdmin(u)){
