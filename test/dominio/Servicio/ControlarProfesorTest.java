@@ -12,7 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ControlarProfesorTest {
-    
+    Profesor po;
     public ControlarProfesorTest() {
     }
     
@@ -26,6 +26,7 @@ public class ControlarProfesorTest {
     
     @Before
     public void setUp() {
+        po= new Profesor(300, "TestProfesor", "TestProfesor", "TestProfesor@gmail.com", 123123, "TestProfesor", "TestProfesor", "TestProfesor", "TestProfesor");
     }
     
     @After
@@ -38,10 +39,10 @@ public class ControlarProfesorTest {
     @Test
     public void testAutentificarProfesor() {
         System.out.println("autentificarProfesor");
-        String u = "";
-        String p = "";
+        String u = "profe";
+        String p = "1234";
         ControlarProfesor instance = new ControlarProfesor();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.autentificarProfesor(u, p);
         assertEquals(expResult, result);
 
@@ -53,10 +54,10 @@ public class ControlarProfesorTest {
     @Test
     public void testCrearProfesor() {
         System.out.println("crearProfesor");
-        Profesor p = null;
+        
         ControlarProfesor instance = new ControlarProfesor();
-        boolean expResult = false;
-        boolean result = instance.crearProfesor(p);
+        boolean expResult = true;
+        boolean result = instance.crearProfesor(po);
         assertEquals(expResult, result);
 
     }
@@ -67,9 +68,9 @@ public class ControlarProfesorTest {
     @Test
     public void testActualizarProfesor() {
         System.out.println("actualizarProfesor");
-        Profesor p = null;
+        Profesor p = new Profesor(13, "TestProfesor", "TestProfesor", "TestProfesor@gmail.com", 123123, "TestProfesor", "TestProfesor", "TestProfesor", "TestProfesor");
         ControlarProfesor instance = new ControlarProfesor();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.actualizarProfesor(p);
         assertEquals(expResult, result);
 
@@ -81,9 +82,9 @@ public class ControlarProfesorTest {
     @Test
     public void testEliminarProfesor() {
         System.out.println("eliminarProfesor");
-        int p = 0;
+        int p = 300;
         ControlarProfesor instance = new ControlarProfesor();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.eliminarProfesor(p);
         assertEquals(expResult, result);
 
@@ -91,7 +92,7 @@ public class ControlarProfesorTest {
 
     /**
      * Test of getProfesorid method, of class ControlarProfesor.
-     */
+     
     @Test
     public void testGetProfesorid() {
         System.out.println("getProfesorid");
@@ -101,11 +102,11 @@ public class ControlarProfesorTest {
         String result = instance.getProfesorid(id);
         assertEquals(expResult, result);
 
-    }
+    }*/
 
     /**
      * Test of getAllProfesor method, of class ControlarProfesor.
-     */
+     
     @Test
     public void testGetAllProfesor() {
         System.out.println("getAllProfesor");
@@ -114,11 +115,11 @@ public class ControlarProfesorTest {
         ArrayList<Profesor> result = instance.getAllProfesor();
         assertEquals(expResult, result);
 
-    }
+    }*/
 
     /**
      * Test of getallStuProfesor method, of class ControlarProfesor.
-     */
+     
     @Test
     public void testGetallStuProfesor() {
         System.out.println("getallStuProfesor");
@@ -129,5 +130,5 @@ public class ControlarProfesorTest {
         assertEquals(expResult, result);
 
     }
-    
+    */
 }

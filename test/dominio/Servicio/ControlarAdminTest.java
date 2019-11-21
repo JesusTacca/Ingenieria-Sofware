@@ -10,7 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ControlarAdminTest {
-    Admin ad,ad2,ad3,ad4,ad5,ad6;
+    Admin ad;
     public ControlarAdminTest() {
     }
     
