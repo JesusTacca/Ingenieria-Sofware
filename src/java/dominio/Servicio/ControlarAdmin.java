@@ -17,20 +17,20 @@ public class ControlarAdmin {
     CrudAdmin ca= new CrudAdmin();
     return ca.getAllAdmin();
   }
-  public String getProfesorid(int id){
+  public String getAdminId(int id){
     String htmlcode="";
     CrudAdmin tmp= new CrudAdmin();
     Admin pr= tmp.getAdmin(id);
    
    htmlcode+= "<form action='../actualizarprofesor' method=\"POST\">\n" +
-"          CODIGO: <input type=\"text\" name=\"codigo\" readonly value='"+pr.getCod()+"'/><br>"+
-"          USERNAME: <input type=\"text\" name=\"username\" value='"+pr.getUsername()+"'/><br>\n" +
-"          CONTRASEÑA: <input type=\"password\" name=\"password\" value='"+pr.getPassword()+"'/><br>\n" +
-"          EMAIL: <input type=\"email\" name=\"email\" value='"+pr.getEmail()+"'/><br>\n" +
-"          DNI: <input type=\"text\" name=\"dni\" value='"+pr.getDni()+"'/><br>\n" +
-"          NOMBRE: <input type=\"text\" name=\"nombre\" value='"+pr.getNombre()+"'/><br>\n" +
-"          APELLIDO<input type=\"text\" name=\"apellido\" value='"+pr.getApellido()+"'/><br>\n" +
-"          <input type=\"submit\" value=\"Actualizar Datos\"/>\n" +
+"          <input placeholder=\"CODIGO\" class=\"form-control\" type=\"text\" name=\"codigo\" readonly value='"+pr.getCod()+"'/><br>"+
+"          <input placeholder=\"USERNAME\" class=\"form-control\" type=\"text\" name=\"username\" value='"+pr.getUsername()+"'/><br>\n" +
+"          <input placeholder=\"CONTRASEÑA\" class=\"form-control\" type=\"password\" name=\"password\" value='"+pr.getPassword()+"'/><br>\n" +
+"          <input placeholder=\"EMAIL\" class=\"form-control\" type=\"email\" name=\"email\" value='"+pr.getEmail()+"'/><br>\n" +
+"          <input placeholder=\"DNI\" class=\"form-control\" type=\"text\" name=\"dni\" value='"+pr.getDni()+"'/><br>\n" +
+"          <input placeholder=\"NOMBRE\" class=\"form-control\" type=\"text\" name=\"nombre\" value='"+pr.getNombre()+"'/><br>\n" +
+"          <input placeholder=\"APELLIDO\" class=\"form-control\" type=\"text\" name=\"apellido\" value='"+pr.getApellido()+"'/><br>\n" +
+"          <input class=\"btn btn-primary\" type=\"submit\" name=\"accion\" value=\"Actualizar\">" +
 "        </form>"; 
     return htmlcode;
     

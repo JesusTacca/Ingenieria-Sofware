@@ -18,6 +18,7 @@ public class ControllerCurso extends HttpServlet {
     int id,codProf,Semestre;
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
+      
         String action=request.getParameter("accion");
       
         if(action.equalsIgnoreCase("Agregar")){
