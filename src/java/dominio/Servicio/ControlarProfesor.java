@@ -29,7 +29,7 @@ public class ControlarProfesor {
     CrudProfesor tmp= new CrudProfesor();
     Profesor pr= tmp.getProfesor(id);
    
-   htmlcode+= "<form class=\"contact_form\" action='../actualizarprofesor' method=\"POST\">\n" +
+   htmlcode+= "<form class=\"contact_form\" action='../controllerprofesor' method=\"POST\">\n" +
            "<ul>"+
            "<li>"+
            "<label for=\"codigo\">CODIGO:</label>"+           
@@ -68,7 +68,7 @@ public class ControlarProfesor {
 "          <input type=\"text\" name=\"especialidad\" value='"+pr.getEspecialidad()+"'/><br>\n" +
            "</li>"+
            "<li>"+            
-"          <button type=\"submit\" value=\"Actualizar Datos\"/>Editar</button>" +
+"          <input class=\"btn btn-primary\" type=\"submit\" name=\"accion\" value=\"Actualizar\">" +
            "</li>"+
            "<ul>"+
 "        </form>"; 

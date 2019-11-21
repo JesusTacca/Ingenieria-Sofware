@@ -17,12 +17,23 @@ public class ControlarAdmin {
     CrudAdmin ca= new CrudAdmin();
     return ca.getAllAdmin();
   }
+  
+  public boolean actualizarAdmin(Admin p){
+    CrudAdmin mp= new CrudAdmin();
+    return mp.actualizarAdmin(p);
+  }
+  
+  public boolean eliminarAdmin(int id){
+        CrudAdmin mp= new CrudAdmin();    /* manejar las acciones que van a realizarse*/
+        return mp.eliminarAdmin(id);
+    }
+  
   public String getAdminId(int id){
     String htmlcode="";
     CrudAdmin tmp= new CrudAdmin();
     Admin pr= tmp.getAdmin(id);
    
-   htmlcode+= "<form action='../actualizarprofesor' method=\"POST\">\n" +
+   htmlcode+= "<form action='../controlleradmin' method=\"POST\">\n" +
 "          <input placeholder=\"CODIGO\" class=\"form-control\" type=\"text\" name=\"codigo\" readonly value='"+pr.getCod()+"'/><br>"+
 "          <input placeholder=\"USERNAME\" class=\"form-control\" type=\"text\" name=\"username\" value='"+pr.getUsername()+"'/><br>\n" +
 "          <input placeholder=\"CONTRASEÑA\" class=\"form-control\" type=\"password\" name=\"password\" value='"+pr.getPassword()+"'/><br>\n" +

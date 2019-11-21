@@ -2,8 +2,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="inc/header.jsp" />
+
  <div class="container">
+     
   <c:set var="type" value="${param.typee}"></c:set>
+  
   <c:choose>
     <c:when test="${type=='newadmin'}">
       <div class="row">
@@ -27,7 +30,7 @@
       <c:when test="${type=='editadmin'}">
         <div class="row">
         <div class="col-6">
-            <h1>Ingreso de nuevo Profesor</h1> 
+            <h1>Editar cuenta de Administrador</h1> 
             <% ControlarAdmin crud= new ControlarAdmin();
                String cod = request.getParameter("id");
             %>
@@ -63,7 +66,7 @@
           <td>${var.nombre}</td>
           <td>${var.apellido}</td>
           <td><a href="Administrador.jsp?typee=editadmin&id=${var.cod}"><img src="../assets/img/rs/edit.png" width="25px" height="25px" alt="Editar"/></a></td>
-          <td><a id='btn-eliminar' href="${var.cod}"><img src="../assets/img/rs/eliminar.png" width="25px" height="25px" alt="Eliminar"/></a></td>
+          <td><a href="../controlleradmin?id=${var.cod}&accion=Eliminar"><img src="../assets/img/rs/eliminar.png" width="25px" height="25px" alt="Eliminar"/></a></td>
         </tr>
       </c:forEach>
      </table>

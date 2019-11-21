@@ -24,7 +24,7 @@
     <div class="row p-4">
      
       <div class="col-12">
-          <form class="contact_form" action="../insertarprofesor" method="POST" name="contact_form">
+          <form class="contact_form" action="../controllerprofesor" method="POST" name="contact_form">
             <ul>
               <li>
                 <h2>Nuevo Profesor</h2>
@@ -68,7 +68,7 @@
                 <input type="text" name="especialidad" placeholder="Ingrese su especialidad" required />
               </li>
               <li>
-                  <button class="submit" type="submit">Registrar</button>
+                  <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
               </li>
           </ul>
           </form>
@@ -245,7 +245,7 @@
             <td><a class="btn btn-primary" href="Profesor.jsp?typee=viewcurso&id=${var2.cod}&npro=${var2.nombre}">Cursos</a></td>
             <td><a href="Profesor.jsp?typee=edit&id=${var2.cod}"><img src="../assets/img/rs/edit.png" width="25px" height="25px" alt="Editar"/></a></td>
         
-            <td><a id='btn-eliminar' href=""><img src="../assets/img/rs/eliminar.png" width="25px" height="25px" alt="Eliminar"/></a></td>
+            <td><a href="../controllerprofesor?id=${var2.cod}&accion=Eliminar"><img src="../assets/img/rs/eliminar.png" width="25px" height="25px" alt="Eliminar"/></a></td>
           </tr>
         </c:forEach>
       </tbody>

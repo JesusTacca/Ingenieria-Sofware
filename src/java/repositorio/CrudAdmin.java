@@ -118,5 +118,55 @@ public class CrudAdmin extends Conexion{
         }       
         
         return adm;
-    } 
+    }
+    
+    public boolean actualizarAdmin(Admin u){
+        PreparedStatement pst = null;
+        boolean flag = false;
+        try {
+            String sql = "call actualizar_Admin(?,?,?,?,?,?,?)";
+            pst = getConnection().prepareStatement(sql);
+            pst.setInt(1, u.getCod());
+            pst.setString(2, u.getUsername());
+            pst.setString(3, u.getPassword());
+            pst.setString(4, u.getEmail());
+            pst.setInt(5, u.getDni());
+            pst.setString(6, u.getNombre());
+            pst.setString(7, u.getApellido());
+            if(pst.executeUpdate() == 1){
+                flag = true;//saber si se actualiza
+            }
+        } catch (Exception e) {
+        }finally{
+            try {
+                if(getConnection() != null)getConnection().close();
+                if(pst != null)pst.close();
+            } catch (Exception e) {
+            }
+        }
+        return flag;
+    }
+    
+    public boolean eliminarAdmin(int cod){
+        
+        boolean flag = false;
+        PreparedStatement pst = null;        
+        try {
+            String sql = "call eliminar_Admin(?)";
+            pst = getConnection().prepareCall(sql);
+            pst.setInt(1, cod);            
+            if(pst.executeUpdate() == 1){
+                flag = true;
+            }            
+        } catch (Exception e) {
+        }finally{
+            try {
+                if(getConnection() != null)getConnection().close();
+                if(pst != null)pst.close();                
+            } catch (Exception e) {
+            
+            }            
+        } 
+        return flag;
+    }
 }
