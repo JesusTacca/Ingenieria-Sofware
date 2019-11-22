@@ -80,7 +80,7 @@
   <c:when test="${type=='edit'}">
     <div class="row">
     <div class="col-12">
-        <h1>Ingreso de nuevo Profesor</h1> 
+        <h1>Editar Profesor</h1> 
         <% ControlarProfesor crud= new ControlarProfesor();
            String cod = request.getParameter("id");
         %>

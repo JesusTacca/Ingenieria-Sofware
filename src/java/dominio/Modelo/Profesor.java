@@ -9,7 +9,7 @@ public class Profesor extends Usuario {
     this.grado = grado;
     this.especialidad = especialidad;
   }
-
+  
   public String getGrado() {
     return grado;
   }

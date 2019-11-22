@@ -1,12 +1,10 @@
 package repositorio;
 
-import repositorio.Conexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import dominio.Modelo.Admin;
-import dominio.Modelo.Usuario;
 
 public class CrudAdmin extends Conexion{
     
@@ -27,14 +25,22 @@ public class CrudAdmin extends Conexion{
             if(pst.executeUpdate()== 1){
                 flag=true;
             }
-        }catch (Exception e){
+        }catch (SQLException e){
             System.err.println(e.getMessage());
-        }finally{
-            try{
-                if(getConnection() !=null) getConnection().close();
-                if(pst !=null) pst.close();
-            }catch (SQLException e){
+        } finally {
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
             }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
+            }
+
         }
         return flag;
     }
@@ -52,22 +58,35 @@ public class CrudAdmin extends Conexion{
             if(rs.absolute(1)){
                 flag = true;
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             System.err.println(e.getMessage());
-        }finally{
-            try{
-                if(getConnection() !=null) getConnection().close();
-                if(pst !=null) pst.close();
-                if(rs != null) rs.close();
-            }catch(Exception e){
+        } finally {
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
             }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                }
+            }
+
         }
         return flag;
     }
     
     //metodo para obtener todos los administradores
     public ArrayList<Admin> getAllAdmin(){
-        ArrayList<Admin> aaa = new ArrayList<Admin>();
+        ArrayList<Admin> aaa = new ArrayList<>();
         PreparedStatement pst = null;
         ResultSet rs = null;
         
@@ -79,14 +98,26 @@ public class CrudAdmin extends Conexion{
             while (rs.next()) { 
                 aaa.add(new Admin(rs.getInt("codigo"),rs.getString("username"), rs.getString("password"), rs.getString("email"), rs.getInt("dni"), rs.getString("nombres"), rs.getString("apellidos")));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }finally{
-            try {
-                if(getConnection() != null)getConnection().close();
-                if(pst != null)pst.close();
-                if(rs !=null)rs.close();
-            } catch (Exception e) {
-            }            
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                }
+            }          
         }       
         return aaa; 
     }
@@ -106,14 +137,25 @@ public class CrudAdmin extends Conexion{
                 adm  = new Admin(rs.getInt("codigo"),rs.getString("username"), rs.getString("password"), rs.getString("email"), rs.getInt("dni"), rs.getString("nombres"), rs.getString("apellidos"));
             }
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }finally{
-            try {
-                if(getConnection() != null)getConnection().close();
-                if(pst != null)pst.close();
-                if(rs !=null)rs.close();
-            } catch (Exception e) {
-            
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
+            }
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                }
             }            
         }       
         
@@ -136,12 +178,19 @@ public class CrudAdmin extends Conexion{
             if(pst.executeUpdate() == 1){
                 flag = true;//saber si se actualiza
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }finally{
-            try {
-                if(getConnection() != null)getConnection().close();
-                if(pst != null)pst.close();
-            } catch (Exception e) {
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
             }
         }
         return flag;
@@ -158,14 +207,20 @@ public class CrudAdmin extends Conexion{
             if(pst.executeUpdate() == 1){
                 flag = true;
             }            
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }finally{
-            try {
-                if(getConnection() != null)getConnection().close();
-                if(pst != null)pst.close();                
-            } catch (Exception e) {
-            
-            }            
+            if (getConnection() != null) {
+                try {
+                    getConnection().close();
+                } catch (SQLException e) {
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                }
+            }       
         } 
         return flag;
     }

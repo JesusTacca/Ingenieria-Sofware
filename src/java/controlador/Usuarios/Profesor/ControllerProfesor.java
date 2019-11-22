@@ -10,100 +10,59 @@ import javax.servlet.http.HttpServletResponse;
 import repositorio.CrudProfesor;
 
 public class ControllerProfesor extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    private static final String ACTION_REFLESH = "mostrarprofesor",ACTION_ERROR="adm/error.jsp";
+    String cod,user,pass,em,dni,nom,apel,grad,esp;
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action=request.getParameter("accion");
+        String action = request.getParameter("accion");
         
-        if(action.equalsIgnoreCase("Agregar")){
-            
-            String cod= request.getParameter("codigo");
-            String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String em = request.getParameter("email");
-            String dni = request.getParameter("dni");
-            String nom = request.getParameter("nombre");
-            String apel = request.getParameter("apellido");
-            String grad = request.getParameter("grado");
-            String esp = request.getParameter("especialidad");
-            Profesor pro= new Profesor(Integer.parseInt(cod), user, pass, em, Integer.parseInt(dni), nom, apel, grad, esp);
-            CrudProfesor cp= new CrudProfesor();
-            if(cp.crearProfesor(pro)){
-              response.sendRedirect("mostrarprofesor");
-            }else{
-              response.sendRedirect("adm/index.jsp");
-            }
-            
-        }
-        else if(action.equalsIgnoreCase("Actualizar")){
-            String cod= request.getParameter("codigo");
-            String user = request.getParameter("username");
-            String pass = request.getParameter("password");
-            String em = request.getParameter("email");
-            String dni = request.getParameter("dni");
-            String nom = request.getParameter("nombre");
-            String apel = request.getParameter("apellido");
-            String grad = request.getParameter("grado");
-            String esp = request.getParameter("especialidad");
-            Profesor pro= new Profesor(Integer.parseInt(cod), user, pass, em, Integer.parseInt(dni), nom, apel, grad, esp);
-
-            CrudProfesor cr= new CrudProfesor();
-            if(cr.actualizarProfesor(pro)){
-              response.sendRedirect("mostrarprofesor");
-            }else{
-              response.sendRedirect("adm/error.jsp");
-            }
-        }
-        else if(action.equalsIgnoreCase("Eliminar")){
+        if(action.equalsIgnoreCase("Eliminar")){
 
             String delete= request.getParameter("id");
             CrudProfesor crud= new CrudProfesor();
             if(crud.eliminarProfesor(Integer.parseInt(delete))){
-              response.sendRedirect("mostrarprofesor");
+              response.sendRedirect(ACTION_REFLESH);
             }
             else{
-              response.sendRedirect("adm/error.jsp");
+              response.sendRedirect(ACTION_ERROR);
             }
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String action = request.getParameter("accion");
+        
+        cod = request.getParameter("codigo");
+        user = request.getParameter("username");
+        pass = request.getParameter("password");
+        em = request.getParameter("email");
+        dni = request.getParameter("dni");
+        nom = request.getParameter("nombre");
+        apel = request.getParameter("apellido");
+        grad = request.getParameter("grado");
+        esp = request.getParameter("especialidad");
+        Profesor pro= new Profesor(Integer.parseInt(cod), user, pass, em, Integer.parseInt(dni), nom, apel, grad, esp);
+        
+        if(action.equalsIgnoreCase("Agregar")){
+            
+            CrudProfesor cp= new CrudProfesor();
+            if(cp.crearProfesor(pro)){
+              response.sendRedirect(ACTION_REFLESH);
+            }else{
+              response.sendRedirect(ACTION_ERROR);
+            }
+        }
+        else if(action.equalsIgnoreCase("Actualizar")){
+            CrudProfesor cr= new CrudProfesor();
+            if(cr.actualizarProfesor(pro)){
+              response.sendRedirect(ACTION_REFLESH);
+            }else{
+              response.sendRedirect(ACTION_ERROR);
+            }
+        }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

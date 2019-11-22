@@ -2,5 +2,5 @@ projectKey=Ingenieria-Sofware
 serverUrl=http://localhost:9000
 serverVersion=7.9.1.27448
 dashboardUrl=http://localhost:9000/dashboard?id=Ingenieria-Sofware
-ceTaskId=AW6P5Rwc4dJBLJuwxl5B
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AW6P5Rwc4dJBLJuwxl5B
+ceTaskId=AW6U-PjGVi09zgTxXNW-
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AW6U-PjGVi09zgTxXNW-
