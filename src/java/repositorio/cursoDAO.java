@@ -60,9 +60,8 @@ public class cursoDAO extends Conexion{
             rs=ps.executeQuery();
             while(rs.next()){                
                 _curso.setId(rs.getInt("codigo"));
-                _curso.setSemestre(rs.getInt("semestre"));
                 _curso.setNom(rs.getString("nombre_curso"));
-   
+                _curso.setSemestre(rs.getInt("semestre"));
                 
             }
         } catch (Exception e) {
@@ -175,6 +174,6 @@ public class cursoDAO extends Conexion{
         }
         
        return false;
-  }
+  } 
     
 }
