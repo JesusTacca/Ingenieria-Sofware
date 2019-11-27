@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author Lenovo
  */
 public class ModeloEscuelaTest {
-    
+    Escuela prueba;
     public ModeloEscuelaTest() {
     }
     
@@ -33,6 +33,7 @@ public class ModeloEscuelaTest {
     
     @Before
     public void setUp() {
+        prueba = new Escuela(15,"prueba");
     }
     
     @After
@@ -45,13 +46,12 @@ public class ModeloEscuelaTest {
     @Test
     public void testCrearEscuela() {
         System.out.println("crearEscuela");
-        Escuela a = null;
+        Escuela a = prueba;
         ModeloEscuela instance = new ModeloEscuela();
         boolean expResult = false;
         boolean result = instance.crearEscuela(a);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -60,13 +60,12 @@ public class ModeloEscuelaTest {
     @Test
     public void testDeleteEscuela() {
         System.out.println("deleteEscuela");
-        int idEscuela = 0;
+        int idEscuela = 15;
         ModeloEscuela instance = new ModeloEscuela();
         boolean expResult = false;
         boolean result = instance.deleteEscuela(idEscuela);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -75,27 +74,27 @@ public class ModeloEscuelaTest {
     @Test
     public void testUpdateEscuela() {
         System.out.println("updateEscuela");
-        Escuela a = null;
+        Escuela a = prueba;
         ModeloEscuela instance = new ModeloEscuela();
         boolean expResult = false;
         boolean result = instance.updateEscuela(a);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of listar method, of class ModeloEscuela.
      */
+    /*
     @Test
     public void testListar() {
         System.out.println("listar");
         ModeloEscuela instance = new ModeloEscuela();
-        ArrayList<Escuela> expResult = null;
+        Escuela expResult = prueba;
         ArrayList<Escuela> result = instance.listar();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+    */
 }

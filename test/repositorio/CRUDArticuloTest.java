@@ -38,10 +38,7 @@ public class CRUDArticuloTest {
     @After
     public void tearDown() {
     }
-
-<<<<<<< HEAD
     
-=======
     /**
      * Test of Listar_PdfVO method, of class CRUDArticulo.
      */
@@ -53,8 +50,6 @@ public class CRUDArticuloTest {
         ArrayList<Articulo> result = instance.Listar_PdfVO();
         assertEquals(expResult, result);
     }
-
->>>>>>> 0cc1cbde64a0eeed3af5361f57fcdee491d95872
     /**
      * Test of Agregar_PdfVO method, of class CRUDArticulo.
      */
