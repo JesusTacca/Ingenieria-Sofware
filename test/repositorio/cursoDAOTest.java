@@ -40,20 +40,6 @@ public class cursoDAOTest {
     }
 
     /**
-     * Test of listar method, of class cursoDAO.
-     */
-    /*
-    @Test
-    public void testListar() {
-        System.out.println("listar");
-        cursoDAO instance = new cursoDAO();
-        ArrayList<curso> expResult = null;
-        ArrayList<curso> result = instance.listar();
-        assertEquals(expResult, result);
-        
-    }
-*/
-    /**
      * Test of obtenerid method, of class cursoDAO.
      */
     @Test
@@ -66,22 +52,6 @@ public class cursoDAOTest {
         assertEquals(expResult, result);
         
     }
-
-    /**
-     * Test of list method, of class cursoDAO.
-     */
-    /*
-    @Test
-    public void testList() {
-        System.out.println("list");
-        int id = 12;
-        cursoDAO instance = new cursoDAO();
-        curso expResult = new curso(12,"Ecologia",6);
-        curso result = instance.list(id);
-        assertEquals(new curso(12,"Ecologia",6), result);
-       
-    }
-    */
 
     /**
      * Test of add method, of class cursoDAO.
@@ -128,21 +98,6 @@ public class cursoDAOTest {
         
     }
 
-    /**
-     * Test of getCursoforProf method, of class cursoDAO.
-     */
-    /*
-    @Test
-    public void testGetCursoforProf() {
-        System.out.println("getCursoforProf");
-        int cod = 0;
-        cursoDAO instance = new cursoDAO();
-        ArrayList<curso> expResult = null;
-        ArrayList<curso> result = instance.getCursoforProf(cod);
-        assertEquals(expResult, result);
-     
-    }
-*/
     /**
      * Test of getCurso method, of class cursoDAO.
      */
