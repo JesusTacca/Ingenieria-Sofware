@@ -68,4 +68,8 @@ public class CrearEscuela extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    void processRequest(Class<HttpServletRequest> request, Class<HttpServletResponse> response) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
