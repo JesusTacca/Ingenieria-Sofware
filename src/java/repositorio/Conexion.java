@@ -2,6 +2,8 @@
 package repositorio;
 
 import com.mysql.jdbc.Connection;
+import static com.sun.xml.ws.security.addressing.impl.policy.Constants.logger;
+import java.util.logging.Level; 
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -21,10 +23,8 @@ public class Conexion {
             Class.forName(classname);
             //se almacena la conexion en una variable
             con = (Connection) DriverManager.getConnection(url,username,password);
-        }catch(ClassNotFoundException e){
-            System.err.println(e.getMessage());
-        }catch(SQLException esql){
-            System.err.println(esql.getMessage());
+        }catch(ClassNotFoundException | SQLException e){
+            logger.log(Level.INFO,e.getMessage());
         }
     }
     public Connection getConnection(){

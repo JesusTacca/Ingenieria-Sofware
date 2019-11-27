@@ -1,7 +1,6 @@
 package controlador.Usuarios.Profesor;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,15 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repositorio.CrudProfesor;
 import dominio.Modelo.Profesor;
-import dominio.Modelo.curso;
-import dominio.Servicio.ControlarCurso;
 
 public class MostrarProfesor extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
 
     CrudProfesor cpro= new CrudProfesor();
-    ArrayList<Profesor> pr= new ArrayList<>();
+    ArrayList<Profesor> pr;
     pr=cpro.getAllProfesor();
 
    
