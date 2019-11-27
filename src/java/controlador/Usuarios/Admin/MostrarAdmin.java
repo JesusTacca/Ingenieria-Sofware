@@ -18,7 +18,7 @@ public class MostrarAdmin extends HttpServlet {
     
     
     ControlarAdmin crud= new ControlarAdmin();
-    ArrayList<Admin> veradmin = new ArrayList<>();
+    ArrayList<Admin> veradmin;
     veradmin = crud.getAllAdmin();
 
     request.getSession().setAttribute("veradmin", veradmin);
@@ -36,9 +36,4 @@ public class MostrarAdmin extends HttpServlet {
           throws ServletException, IOException {
     processRequest(request, response);
   }
-  @Override
-  public String getServletInfo() {
-    return "Short description";
-  }// </editor-fold>
-
 }

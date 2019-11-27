@@ -2,7 +2,7 @@ $(function(){
   
    $('tr #btn-eliminar2').click(function(e){
       e.preventDefault();
-      var opcion = confirm("Desea Eliminar el Curso");
+      var opcion = confirm("¿Desea Eliminar el Curso?");
       
       if(opcion){
            var fila = $(this).parent().parent();           
@@ -16,7 +16,7 @@ $(function(){
    
     $('tr #btn-eliminar').click(function(e){
       e.preventDefault();
-      var opcion = confirm("Desea Eliminar el Usuario");
+      var opcion = confirm("¿Desea Eliminar el Profesor?");
       
       if(opcion){
            var fila = $(this).parent().parent();           
