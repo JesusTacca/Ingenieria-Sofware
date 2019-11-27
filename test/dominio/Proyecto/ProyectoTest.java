@@ -45,15 +45,11 @@ public class ProyectoTest {
     public void testGetCodigo() {
         System.out.println("getCodigo");
         Proyecto instance = new Proyecto();
-       // instance.setCodigo(0);
         int expResult = 0;
         int result = instance.getCodigo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(result!=expResult){
-            fail("The test case is a prototype.");
-        }
     }
+
     /**
      * Test of getTitulo method, of class Proyecto.
      */
@@ -61,14 +57,9 @@ public class ProyectoTest {
     public void testGetTitulo() {
         System.out.println("getTitulo");
         Proyecto instance = new Proyecto();
-        instance.setTitulo("IS");
-        String expResult = "IS";
+        String expResult = null;
         String result = instance.getTitulo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(!result.equals(expResult)){
-            fail("The test case is a prototype.");
-        }
     }
 
     /**
@@ -78,14 +69,9 @@ public class ProyectoTest {
     public void testGetFecha() {
         System.out.println("getFecha");
         Proyecto instance = new Proyecto();
-        instance.setFecha("1/1/1");
-        String expResult = "1/1/1";
+        String expResult = null;
         String result = instance.getFecha();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(!result.equals(expResult)){
-            fail("The test case is a prototype.");
-        }
     }
 
     /**
@@ -98,10 +84,6 @@ public class ProyectoTest {
         InputStream expResult = null;
         InputStream result = instance.getArchivo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(result == null ? expResult != null : !result.equals(expResult)){
-            fail("The test case is a prototype.");
-        }
     }
 
     /**
@@ -113,11 +95,7 @@ public class ProyectoTest {
         int codigopdf = 0;
         Proyecto instance = new Proyecto();
         instance.setCodigo(codigopdf);
-        // TODO review the generated test code and remove the default call to fail.
-        if(codigopdf!=instance.getCodigo()){
-            fail("The test case is a prototype.");
-        }
-        }
+    }
 
     /**
      * Test of setTitulo method, of class Proyecto.
@@ -125,12 +103,9 @@ public class ProyectoTest {
     @Test
     public void testSetTitulo() {
         System.out.println("setTitulo");
-        String nombrepdf = "IS";
+        String nombrepdf = "";
         Proyecto instance = new Proyecto();
         instance.setTitulo(nombrepdf);
-        // TODO review the generated test code and remove the default call to fail.
-        if(!nombrepdf.equals(instance.getTitulo()))
-            fail("The test case is a prototype.");
     }
 
     /**
@@ -139,12 +114,9 @@ public class ProyectoTest {
     @Test
     public void testSetFecha() {
         System.out.println("setFecha");
-        String fecha = "1/1/1";
+        String fecha = "";
         Proyecto instance = new Proyecto();
         instance.setFecha(fecha);
-        // TODO review the generated test code and remove the default call to fail.
-        if(!fecha.equals(instance.getFecha()))
-            fail("The test case is a prototype.");
     }
 
     /**
@@ -156,9 +128,6 @@ public class ProyectoTest {
         InputStream archivopdf = null;
         Proyecto instance = new Proyecto();
         instance.setArchivo(archivopdf);
-        // TODO review the generated test code and remove the default call to fail.
-        if(archivopdf!=instance.getArchivo())
-            fail("The test case is a prototype.");
     }
 
     /**
@@ -171,9 +140,6 @@ public class ProyectoTest {
         byte[] expResult = null;
         byte[] result = instance.getArchivo2();
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        if(expResult!=result)
-            fail("The test case is a prototype.");
     }
 
     /**
@@ -185,9 +151,6 @@ public class ProyectoTest {
         byte[] archivopdf2 = null;
         Proyecto instance = new Proyecto();
         instance.setArchivo2(archivopdf2);
-        // TODO review the generated test code and remove the default call to fail.
-        if(archivopdf2!=instance.getArchivo2())
-            fail("The test case is a prototype.");
     }
     
 }
