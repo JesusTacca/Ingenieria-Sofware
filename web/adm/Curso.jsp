@@ -53,6 +53,7 @@
     
           
           <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
+          
         </form>
       </div>
     </div>

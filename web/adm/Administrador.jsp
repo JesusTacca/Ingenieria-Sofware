@@ -2,14 +2,17 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="inc/header.jsp" />
+
  <div class="container">
+     
   <c:set var="type" value="${param.typee}"></c:set>
+  
   <c:choose>
     <c:when test="${type=='newadmin'}">
       <div class="row">
         <div class="col-6">
             <h1>Ingreso de nuevo Administrador</h1>
-            <form action="../insertaradmin" method="POST">
+            <form action="../controlleradmin" method="POST">
                <input class="form-control" type="text" name="codigo" placeholder="CODIGO"/><br>
                 <input class="form-control" type="text" name="username" placeholder="USERNAME"/><br>
                 <input class="form-control" type="password" name="password" placeholder="CONTRASEÑA"/><br>
@@ -17,7 +20,8 @@
                 <input class="form-control" type="text" name="dni" placeholder="DNI"/><br>
                 <input class="form-control" type="text" name="nombre" placeholder="NOMBRE"/><br>
                 <input class="form-control" type="text" name="apellido" placeholder="APELLIDO"/><br>
-              <input class="btn btn-primary" type="submit" value="Registrar"/>
+                
+              <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
             </form>
         </div>
       </div>
@@ -25,12 +29,12 @@
     
       <c:when test="${type=='editadmin'}">
         <div class="row">
-        <div class="col-12">
-            <h1>Ingreso de nuevo Profesor</h1> 
+        <div class="col-6">
+            <h1>Editar cuenta de Administrador</h1> 
             <% ControlarAdmin crud= new ControlarAdmin();
                String cod = request.getParameter("id");
             %>
-            <%= crud.getProfesorid(Integer.parseInt(cod))%>
+            <%= crud.getAdminId(Integer.parseInt(cod))%>
         </div>
       </div>
       </c:when>
@@ -62,7 +66,7 @@
           <td>${var.nombre}</td>
           <td>${var.apellido}</td>
           <td><a href="Administrador.jsp?typee=editadmin&id=${var.cod}"><img src="../assets/img/rs/edit.png" width="25px" height="25px" alt="Editar"/></a></td>
-          <td><a href="${var.cod}">Eliminar</a></td>
+          <td><a href="../controlleradmin?id=${var.cod}&accion=Eliminar"><img src="../assets/img/rs/eliminar.png" width="25px" height="25px" alt="Eliminar"/></a></td>
         </tr>
       </c:forEach>
      </table>
