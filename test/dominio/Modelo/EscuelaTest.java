@@ -42,7 +42,6 @@ public class EscuelaTest {
         int expResult = 0;
         int result = instance.getId_escuela();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         if(result!=expResult)
         {
             assertError();
@@ -60,7 +59,6 @@ public class EscuelaTest {
         String expResult = "Junior";
         String result = instance.getNombre();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         if(!result.equals(expResult))
         {
             assertError();
@@ -76,7 +74,6 @@ public class EscuelaTest {
         int codigo = 0;
         instance.setId_escuela(codigo);
         assertEquals(codigo,0);
-        // TODO review the generated test code and remove the default call to fail.
         if(codigo!=instance.getCodigo())
         {   
             assertError();
@@ -92,7 +89,6 @@ public class EscuelaTest {
         String Nombre = "";
         Escuela instance = new Escuela();
         instance.setNombre(Nombre);
-        // TODO review the generated test code and remove the default call to fail.
         if(Nombre!=instance.getNombre()){
             assertError();
         }
@@ -107,7 +103,6 @@ public class EscuelaTest {
         int expResult = 0;
         int result = instance.getCodigo();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         if(result!=expResult)
         {
             assertError();
@@ -123,7 +118,6 @@ public class EscuelaTest {
         int codigo = 0;
         Escuela instance = new Escuela();
         instance.setCodigo(codigo);
-        // TODO review the generated test code and remove the default call to fail.
         if(codigo!=instance.getCodigo())
         {
             assertError();
@@ -131,7 +125,7 @@ public class EscuelaTest {
     }
 
     private void assertError() {
-        throw new UnsupportedOperationException("Error"); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Error"); 
     }
     
 }

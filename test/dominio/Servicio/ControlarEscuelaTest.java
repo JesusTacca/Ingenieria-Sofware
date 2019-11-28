@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
  * @author Lenovo
  */
 public class ControlarEscuelaTest {
-    
+    Escuela Base;
     public ControlarEscuelaTest() {
     }
     
@@ -33,6 +33,7 @@ public class ControlarEscuelaTest {
     
     @Before
     public void setUp() {
+        Base = new Escuela(14,"Ciencia de la Computacion");
     }
     
     @After
@@ -45,13 +46,12 @@ public class ControlarEscuelaTest {
     @Test
     public void testCrearEscuela() {
         System.out.println("crearEscuela");
-        Escuela p = null;
+        Escuela p = Base;
         ControlarEscuela instance = new ControlarEscuela();
         boolean expResult = false;
         boolean result = instance.crearEscuela(p);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -60,18 +60,18 @@ public class ControlarEscuelaTest {
     @Test
     public void testDeleteEscuela() {
         System.out.println("deleteEscuela");
-        int idEscuela = 0;
+        int idEscuela = 14;
         ControlarEscuela instance = new ControlarEscuela();
         boolean expResult = false;
         boolean result = instance.deleteEscuela(idEscuela);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of listarEscuelas method, of class ControlarEscuela.
      */
+    /*
     @Test
     public void testListarEscuelas() {
         System.out.println("listarEscuelas");
@@ -82,5 +82,5 @@ public class ControlarEscuelaTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+    */
 }
