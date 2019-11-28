@@ -34,7 +34,6 @@ public class ModeloEscuelaTest {
         boolean expResult = false;
         boolean result = instance.crearEscuela(a);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     @Test
@@ -45,7 +44,6 @@ public class ModeloEscuelaTest {
         boolean expResult = false;
         boolean result = instance.deleteEscuela(idEscuela);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     @Test
@@ -56,7 +54,6 @@ public class ModeloEscuelaTest {
         boolean expResult = false;
         boolean result = instance.updateEscuela(a);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
     }
 
     /**
