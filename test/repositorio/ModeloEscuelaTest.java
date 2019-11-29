@@ -98,6 +98,10 @@ public class ModeloEscuelaTest {
         fail("The test case is a prototype.");
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    
+>>>>>>> parent of ae0269a... Paul SV V1.4
 =======
     
 >>>>>>> parent of ae0269a... Paul SV V1.4
