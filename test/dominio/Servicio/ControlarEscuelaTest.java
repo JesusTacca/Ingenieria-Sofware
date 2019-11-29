@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repositorio;
+package dominio.Servicio;
 
 import dominio.Modelo.Escuela;
 import java.util.ArrayList;
@@ -18,9 +18,9 @@ import static org.junit.Assert.*;
  *
  * @author Lenovo
  */
-public class ModeloEscuelaTest {
+public class ControlarEscuelaTest {
     
-    public ModeloEscuelaTest() {
+    public ControlarEscuelaTest() {
     }
     
     @BeforeClass
@@ -40,28 +40,28 @@ public class ModeloEscuelaTest {
     }
 
     /**
-     * Test of crearEscuela method, of class ModeloEscuela.
+     * Test of crearEscuela method, of class ControlarEscuela.
      */
     @Test
     public void testCrearEscuela() {
         System.out.println("crearEscuela");
-        Escuela a = null;
-        ModeloEscuela instance = new ModeloEscuela();
+        Escuela p = null;
+        ControlarEscuela instance = new ControlarEscuela();
         boolean expResult = false;
-        boolean result = instance.crearEscuela(a);
+        boolean result = instance.crearEscuela(p);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of deleteEscuela method, of class ModeloEscuela.
+     * Test of deleteEscuela method, of class ControlarEscuela.
      */
     @Test
     public void testDeleteEscuela() {
         System.out.println("deleteEscuela");
         int idEscuela = 0;
-        ModeloEscuela instance = new ModeloEscuela();
+        ControlarEscuela instance = new ControlarEscuela();
         boolean expResult = false;
         boolean result = instance.deleteEscuela(idEscuela);
         assertEquals(expResult, result);
@@ -70,35 +70,17 @@ public class ModeloEscuelaTest {
     }
 
     /**
-     * Test of updateEscuela method, of class ModeloEscuela.
+     * Test of listarEscuelas method, of class ControlarEscuela.
      */
     @Test
-    public void testUpdateEscuela() {
-        System.out.println("updateEscuela");
-        Escuela a = null;
-        ModeloEscuela instance = new ModeloEscuela();
-        boolean expResult = false;
-        boolean result = instance.updateEscuela(a);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of listar method, of class ModeloEscuela.
-     */
-    @Test
-    public void testListar() {
-        System.out.println("listar");
-        ModeloEscuela instance = new ModeloEscuela();
+    public void testListarEscuelas() {
+        System.out.println("listarEscuelas");
+        ControlarEscuela instance = new ControlarEscuela();
         ArrayList<Escuela> expResult = null;
-        ArrayList<Escuela> result = instance.listar();
+        ArrayList<Escuela> result = instance.listarEscuelas();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> parent of ae0269a... Paul SV V1.4
 }
