@@ -41,6 +41,7 @@ public class CRUDArticuloTest {
     /**
      * Test of Listar_PdfVO method, of class CRUDArticulo.
      */
+    /*
     @Test
     public void testListar_PdfVO() {
         System.out.println("Listar_PdfVO");
@@ -49,6 +50,7 @@ public class CRUDArticuloTest {
         ArrayList<Articulo> result = instance.Listar_PdfVO();
         assertEquals(expResult, result);
     }
+    */
     /**
      * Test of Agregar_PdfVO method, of class CRUDArticulo.
      */

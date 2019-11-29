@@ -59,7 +59,11 @@ public class VisitanteTest {
         System.out.println("setNum_bancario");
         int num_bancario = 0;
         Visitante instance = null;
-        instance.setNum_bancario(num_bancario);
+        try {
+            instance.setNum_bancario(num_bancario);
+        } catch (Exception e) {
+            fail("The test case is a prototype.");
+        }
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
