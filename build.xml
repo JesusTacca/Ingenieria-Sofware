@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="bdFinal" default="runjunit" basedir=".">
+<project name="bdFinal" default="default" basedir=".">
     <description>Builds, tests, and runs the project bdFinal.</description>
     <import file="nbproject/build-impl.xml"/>
     
-    <target name="runjunit" depends="compile">
-
-    </target>
-    <target name="compile">
-        <javac includeantruntime="false" srcdir="./build/test" destdir="staging" classpath="D:\Mis Documentos\Documentos\GitHub\Ingenieria-Sofware\lib\junit-4.11.jar"/>
-    </target>
 </project>
