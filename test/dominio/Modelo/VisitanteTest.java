@@ -61,6 +61,7 @@ public class VisitanteTest {
         Visitante instance = null;
         try {
             instance.setNum_bancario(num_bancario);
+            assertEquals(num_bancario,instance.getNum_bancario());
         } catch (Exception e) {
             fail("The test case is a prototype.");
         }
