@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import repositorio.CrudAdmin;
+import repositorio.CrudEstudiante;
 import repositorio.CrudProfesor;
 import repositorio.CrudVisitante;
 
@@ -22,6 +23,7 @@ public class login extends HttpServlet {
         CrudAdmin admin = new CrudAdmin();
         CrudProfesor profesor = new CrudProfesor();
         CrudVisitante visitante = new CrudVisitante();
+        CrudEstudiante Estudiante  = new CrudEstudiante();
         
         HttpSession sesion = request.getSession();
         
@@ -38,6 +40,11 @@ public class login extends HttpServlet {
         } else if (visitante.autentificarVisitante(user, pass)) {
             sesion.setAttribute(ACTION_NIVEL, "Visitante");
             response.sendRedirect("BuscarProyectos");
+            
+        }else if (Estudiante.autentificarEstudiante(user, pass)) {
+            sesion.setAttribute(ACTION_NIVEL, "Estudiante");
+            response.sendRedirect("adm/estu/indexEstudiante.jsp");
+            
         } else {
             response.sendRedirect("error.jsp");
         }
