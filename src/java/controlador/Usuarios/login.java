@@ -43,7 +43,7 @@ public class login extends HttpServlet {
             
         }else if (Estudiante.autentificarEstudiante(user, pass)) {
             sesion.setAttribute(ACTION_NIVEL, "Estudiante");
-            response.sendRedirect("adm/estu/indexEstudiante.jsp");
+            response.sendRedirect("estud/indexEstudiante.jsp");
             
         } else {
             response.sendRedirect("error.jsp");
