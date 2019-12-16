@@ -3,28 +3,9 @@
 <%@ page import="java.io.*,java.util.*" %>
 <jsp:include page="header.jsp" />
 <div class="container">
-
-  <div class="row">
-     <table border="1">
-       <tr>
-         <th>Codigo</th>
-         <th>Nombre</th>
-         <th>Apellido</th>
-         <th>Username</th>
-         <th>CUI</th>
-       </tr>
-      <c:forEach var="var" items="${sessionScope.verEstud}">
-        <tr>
-          <td>${var.cod}</td>
-          <td>${var.nombre}</td>
-          <td>${var.apellido}</td>
-          <td>${var.username}</td>
-          <td>${var.cui}</td>
-          <td><a href="editEstudiante.jsp?id=${var.cod}">Editar</a></td>
-          <td><a href="../../EliminarEstudiante?val=${var.cod}">Eliminar</a></td>
-        </tr>
-      </c:forEach>
-     </table>
-   </div>
+    <div align="center" style=" background-color: rgba(255, 255, 255, 0.5); height: 150px; width: 100%;">
+        <div align="center"><strong>GITUNSA</strong></div>
+        <div>Sistema de almacenamiento de proyectos</div>
+    </div>
 </div>
 <jsp:include page="footer.jsp" />

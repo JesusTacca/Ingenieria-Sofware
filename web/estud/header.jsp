@@ -11,8 +11,19 @@
 
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <title>Administracion | GitUnsa</title>
+        <style>
+            body{
+                background-size:100% 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+            }
+            strong{
+                font-size: 30px;
+            }
+            </style>
     </head>
-    <body>
+    <body background="../img/fondo_estudiante.jpg">
       <div class="container-fluid bg-secondary">
       <nav class=" container navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#">
